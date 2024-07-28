@@ -1,6 +1,10 @@
 import Image from "next/image";
+// import axios from "axios";
+// import { getUsers } from "./_lib/data-service";
+export default async function Home() {
+  // await test();
+  // console.log(response);
 
-export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
