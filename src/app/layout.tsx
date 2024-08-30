@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
+import Header from "@/components/Header";
+import SideNav from "@/components/SideNav";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["cyrillic"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,10 +18,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        {children}
+    <html lang="en" className="h-full">
+      <body className={inter.className + " bg-gray-900 text-white"}>
+        <Header />
+        <div className="flex h-[100vh]">
+          <SideNav />
+          <div className="flex-1 overflow-y-auto px-8 py-12 ">
+            <main className="max-w-7xl mx-auto w-full">{children}</main>
+          </div>
+        </div>
         <Toaster />
+        <div id="modal-root"></div>
       </body>
     </html>
   );
