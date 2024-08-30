@@ -1,0 +1,7 @@
+# Ignore build and output directories
+.next/
+out/
+build/
+
+# Ignore node modules
+node_modules/
